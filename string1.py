@@ -24,8 +24,13 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """count donuts function because donuts are delicious"""
+    beginning = "Number of donuts:"
+    if count >= 10:
+        donut_count = "many"
+    else:
+        donut_count = count
+    return "{} {}".format(beginning, donut_count)
 
 
 # B. both_ends
@@ -34,13 +39,17 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """take the first and last char because of serial position effect"""
+    if len(s) < 2:
+        return ""
+    first = s[:2]
+    last = s[-2:]
+    return first + last
 
 
 # C. fix_start
 # Given a string s, return a string
-# where all occurences of its first char have
+# where all occurrences of its first char have
 # been changed to '*', except do not change
 # the first char itself.
 # e.g. 'babble' yields 'ba**le'
@@ -48,8 +57,10 @@ def both_ends(s):
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """remove chars that match the first because first thinks it's special"""
+    first = s[0]
+    rest = s.replace(first, "*")
+    return first + rest[1:]
 
 
 # D. MixUp
@@ -60,8 +71,12 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """switch starts and combine because pig latin is for losers"""
+    a_firsties = a[0:2]
+    b_firsties = b[0:2]
+    a_resties = a[2:]
+    b_resties = b[2:]
+    return "{}{} {}{}".format(b_firsties, a_resties, a_firsties, b_resties)
 
 
 # Provided simple test() function used in main() to print
