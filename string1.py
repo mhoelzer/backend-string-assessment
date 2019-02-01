@@ -24,7 +24,7 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-    """count donuts function because donuts are delicious"""
+    """count donuts because donuts are delicious"""
     beginning = "Number of donuts:"
     if count >= 10:
         donut_count = "many"
@@ -39,7 +39,7 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
-    """take the first and last char because of serial position effect"""
+    """keep the first and last chars because of serial position effect"""
     if len(s) < 2:
         return ""
     first = s[:2]
@@ -95,7 +95,8 @@ def test(got, expected):
 def main():
     """Your code goes here.  Edit this docstring."""
     print('donuts')
-    # Each line calls donuts, compares its result to the expected for that call.
+    # Each line calls donuts, compares its result to the
+    # expected for that call.
     test(donuts(4), 'Number of donuts: 4')
     test(donuts(9), 'Number of donuts: 9')
     test(donuts(10), 'Number of donuts: many')

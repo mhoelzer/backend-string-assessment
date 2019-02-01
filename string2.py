@@ -18,8 +18,12 @@
 
 
 def verbing(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """adding ing (and ly) because >= 3 is greedy for letters"""
+    if len(s) >= 3:
+        if s.endswith("ing"):
+            return s + "ly"
+        return s + "ing"
+    return s
 
 
 # E. not_bad
@@ -31,8 +35,13 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """losing not and bad because optimism is in style"""
+    not_index = s.find("not")
+    bad_index = s.find("bad")
+    not_bad_substring = s[not_index:bad_index + 3]
+    if bad_index > not_index:
+        s = s.replace(not_bad_substring, "good")  # needs substring, not nums
+    return s
 
 
 # F. front_back
@@ -43,8 +52,22 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """halfing/mixing because frankenstein's monster was just the beginning"""
+    a_len = len(a) 
+    b_len = len(b) 
+    if a_len % 2 == 0:
+        a_half = a_len / 2
+    else: 
+        a_half = a_len / 2 + 1
+    if b_len % 2 == 0:
+        b_half = b_len / 2
+    else: 
+        b_half = b_len / 2 + 1
+    a_front = a[:a_half]
+    a_back = a[a_half:]
+    b_front = b[:b_half]
+    b_back = b[b_half:]
+    return a_front + b_front + a_back + b_back
 
 
 # Provided simple test() function used in main() to print
