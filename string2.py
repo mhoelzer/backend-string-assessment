@@ -41,7 +41,9 @@ def not_bad(s):
     not_bad_substring = s[not_index:bad_index + 3]
     if bad_index > not_index:
         s = s.replace(not_bad_substring, "good")  # needs substring, not nums
-    return s
+    return s  # could also do else: return s
+    # if not_index != -1 and bad_index != -1 and bad_index > not_index:
+    #     s = s[:not_index] + "good" + s[bad_index+3]
 
 
 # F. front_back
@@ -53,21 +55,40 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
     """halfing/mixing because frankenstein's monster was just the beginning"""
-    a_len = len(a) 
-    b_len = len(b) 
+    a_len = len(a)
+    b_len = len(b)
     if a_len % 2 == 0:
         a_half = a_len / 2
-    else: 
+    else:
         a_half = a_len / 2 + 1
     if b_len % 2 == 0:
         b_half = b_len / 2
-    else: 
+    else:
         b_half = b_len / 2 + 1
     a_front = a[:a_half]
     a_back = a[a_half:]
     b_front = b[:b_half]
     b_back = b[b_half:]
     return a_front + b_front + a_back + b_back
+
+    # a_mid = len(a) / 2
+    # b_mid = len(b) / 2
+    # if len(a) % 2 == 1:
+    #     # add 1 if lenght is odd
+    #     a_mid += 1
+    # if len(b) % 2 == 1:
+    #     b_mid += 1
+    # return a[:a_mid] + b[:b_mid] + a[a_mid:] + b[b_mid:]
+
+    # ???
+    # def split_half(s):
+    #     return (len(s) + 1) / 2
+    # return a[:split_half(a)] + b[:split_half(b)] + a[split_half(a):] + b[split_half(b):]
+
+    # # ???
+    # def split_half(s):
+    #     return (len(s) - len(s)) // 2
+    # return a[:split_half(a)] + b[:split_half(b)] + a[split_half(a):] + b[split_half(b):]
 
 
 # Provided simple test() function used in main() to print
