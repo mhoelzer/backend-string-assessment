@@ -32,6 +32,11 @@ def donuts(count):
         donut_count = count
     return "{} {}".format(beginning, donut_count)
 
+    # donut_string = "many"
+    # if count < 10:
+    #     donut_string = count
+    # return "Number of donuts: {}".format(donut_string)
+
 
 # B. both_ends
 # Given a string s, return a string made of the first 2
@@ -72,8 +77,8 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
     """switch starts and combine because pig latin is for losers"""
-    a_firsties = a[0:2]
-    b_firsties = b[0:2]
+    a_firsties = a[:2]
+    b_firsties = b[:2]
     a_resties = a[2:]
     b_resties = b[2:]
     return "{}{} {}{}".format(b_firsties, a_resties, a_firsties, b_resties)
@@ -88,7 +93,7 @@ def test(got, expected):
     else:
         prefix = '  X '
     print('{} got: {} expected: {}'.format(prefix, repr(got), repr(expected)))
-    
+
 
 # Provided main() calls the above functions with interesting inputs,
 # using test() to check if each result is correct or not.
